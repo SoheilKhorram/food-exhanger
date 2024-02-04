@@ -25,6 +25,7 @@ function App() {
         <h3>(U+1F436)</h3>
         <h3>Dog Face</h3>
         <h3>&#128054;</h3>
+        <h3>😆</h3>
       </div>
       <div className='card'>
         <button onClick={() => setCount((count) => count + 1)}>
