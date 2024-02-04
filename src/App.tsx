@@ -8,8 +8,6 @@ import WebApp from '@twa-dev/sdk';
 function App() {
   const [count, setCount] = useState(0);
 
-  const snowflake = u'\U00002744'
-
   return (
     <>
       <div>
@@ -25,7 +23,7 @@ function App() {
       <div>
         <h1>Unicode Character</h1>
         <h3>(U+1F436)</h3>
-        < h3>Dog Face</h3>
+        <h3>Dog Face</h3>
         <h3>&#128054;</h3>
       </div>
       <div className='card'>
