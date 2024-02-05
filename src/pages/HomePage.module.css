@@ -1,0 +1,9 @@
+.exchange_food_options__buttons{
+    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.exchange_food_options__buttons button:nth-child(3){
+    grid-column: 2 span;
+}
