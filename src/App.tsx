@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 import './App.css'
+import TelegramTheme from './TelegramTheme'
 import HomePage from './pages/HomePage'
 
 // import WebApp from '@twa-dev/sdk'
@@ -8,8 +9,8 @@ import HomePage from './pages/HomePage'
 function App() {
   return (
     <div className="app">
-      <h1>Hello Telegram Mini App</h1>
-      <HomePage/>
+      <HomePage />
+      <TelegramTheme />
     </div>
   )
 }

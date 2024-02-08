@@ -1,8 +1,8 @@
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import { useEffect, useRef } from 'react';
-import CircleAnim from '../assets/circle.json';
-import GuyAnim1 from '../assets/man2.json';
-import WomanAnim1 from '../assets/woman2.json';
+
+import ManAnimation from '../assets/man.json';
+import WomanAnimation from '../assets/woman.json';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
@@ -25,27 +25,18 @@ const HomePage = () => {
       </div>
       <Lottie
         lottieRef={container}
-        animationData={GuyAnim1}
+        animationData={ManAnimation}
         autoPlay={true}
         loop={true}
         initialSegment={[35, 110]}
       />
-      <div style={{ position: 'relative' }}>
         <Lottie
           lottieRef={container}
-          animationData={WomanAnim1}
+          animationData={WomanAnimation}
           autoPlay={true}
           loop={true}
           initialSegment={[35, 110]}
         />
-        <Lottie
-          lottieRef={container}
-          animationData={CircleAnim}
-          autoPlay={true}
-          loop={true}
-          style={{ position: 'absolute', top: 0, color: 'red' }}
-        />
-      </div>
     </div>
   );
 };

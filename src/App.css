@@ -1,12 +1,19 @@
-/* *:focus {
+*:focus {
   -webkit-tap-highlight-color: transparent;
   outline: none;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
-} */
+}
 
-.app {
-  background-color: var(--tg-color-scheme);
+body {
+  --bg-color: var(--tg-theme-bg-color, #fff);
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--tg-theme-text-color, #222);
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  color-scheme: var(--tg-color-scheme);
 }
 
 button {
@@ -19,4 +26,69 @@ button {
   background-color: var(--tg-theme-button-color, #50a8eb);
   color: var(--tg-theme-button-text-color, #ffffff);
   cursor: pointer;
+}
+
+.bg_color {
+  background-color: var(--tg-theme-bg-color);
+  padding: 1.5rem
+}
+
+.text_color {
+  color: var(--tg-theme-text-color);
+  padding: 1.5rem
+}
+
+.hint_color {
+  color: var(--tg-theme-hint-color);
+  padding: 1.5rem
+}
+
+.link_color {
+  color: var(--tg-theme-link-color);
+  padding: 1.5rem
+}
+
+.button_color {
+  color: var(--tg-theme-button-color);
+  padding: 1.5rem
+}
+
+.button_text_color {
+  color: var(--tg-theme-button-text-color);
+  padding: 1.5rem
+}
+
+.secondary_bg_color {
+  background-color: var(--tg-theme-secondary-bg-color);
+  padding: 1.5rem
+}
+
+.header_bg_color {
+  background-color: var(--tg-theme-header-bg-color);
+  padding: 1.5rem
+}
+
+.accent_text_color {
+  color: var(--tg-theme-accent-text-color);
+  padding: 1.5rem
+}
+
+.section_bg_color {
+  background-color: var(--tg-theme-section-bg-color);
+  padding: 1.5rem
+}
+
+.section_header_text_color {
+  color: var(--tg-theme-section-header-text-color);
+  padding: 1.5rem
+}
+
+.subtitle_text_color {
+  color: var(--tg-theme-subtitle-text-color);
+  padding: 1.5rem
+}
+
+.destructive_text_color {
+  color: var(--tg-theme-destructive-text-color);
+  padding: 1.5rem
 }
