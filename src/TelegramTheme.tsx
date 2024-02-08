@@ -30,6 +30,21 @@ const TelegramTheme = () => {
             </div>
             <div className="section_bg_color">
                 section_bg_color
+                <div className="section_bg_color">
+                    section_bg_color
+                    <div className="section_bg_color">
+                        section_bg_color
+                        <div className="section_bg_color">
+                            section_bg_color
+                        </div>
+                    </div>
+                </div>
+                <div className="section_bg_color">
+                    section_bg_color
+                    <div className="section_bg_color">
+                        section_bg_color
+                    </div>
+                </div>
             </div>
             <div className="section_header_text_color">
                 section_header_text_color
