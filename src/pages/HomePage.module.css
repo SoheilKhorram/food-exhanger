@@ -1,4 +1,7 @@
 .home-page {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
     background-color: var(--tg-theme-secondary-bg-color, #000);
     min-height: 100vh;
     position: relative;
@@ -50,4 +53,55 @@
 .woman-border-color {
     border: 1.5px solid #00a99d;
     transition: all 150ms ease;
+}
+
+.food_options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    gap: .75rem;
+}
+
+.food_options p {
+    text-align: right;
+    font-size: .75rem;
+    grid-column: 2 span;
+    color: var(--tg-theme-text-color, #fff)
+}
+
+.place_options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    gap: .75rem;
+}
+
+.place_options p {
+    text-align: right;
+    font-size: .75rem;
+    grid-column: 2 span;
+    color: var(--tg-theme-text-color, #fff)
+}
+
+.code {
+    display: grid;
+    padding: 1rem;
+    gap: .75rem;
+}
+
+.code p {
+    color: var(--tg-theme-text-color, #fff);
+    font-size: .75rem;
+    text-align: right;
+}
+
+.code input {
+    border: none;
+    background-color: var(--tg-theme-section-bg-color, #252525);
+    border: 1px solid var(--tg-theme-button-color, #57ca94);
+    color: var(--tg-theme-button-color, #57ca94);
+    padding: 10.2px 20px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: right;
 }

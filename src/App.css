@@ -12,10 +12,9 @@
 }
 
 body {
-  font-family: sans-serif;
   background-color: var(--tg-theme-bg-color, #fff);
   color: var(--tg-theme-text-color, #222);
-  font-size: 14px;
+  font-size: 1rem;
   margin: 0;
   padding: 0;
   color-scheme: var(--tg-color-scheme);
@@ -25,10 +24,11 @@ body {
 .button {
   display: block;
   width: 100%;
-  font-size: 14px;
-  padding: 12px 20px;
+  font-size: .75rem;
+  padding: 6px;
   border: none;
   border-radius: 10px;
+  font-family: Yekan;
   background-color: var(--tg-theme-button-color, #50a8eb);
   color: var(--tg-theme-button-text-color, #ffffff);
   cursor: pointer;
