@@ -23,7 +23,7 @@
 
 
 .man_or_woman--man-border {
-    background-color: var(--tg-theme-section-bg-color, #252525);
+    background-color: var(--tg-theme-bg-color, #252525);
     position: absolute;
     width: 33%;
     height: 33vw;
