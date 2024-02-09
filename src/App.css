@@ -36,7 +36,7 @@ body {
 }
 
 .button.unselected {
-  background-color: var(--tg-theme-section-bg-color, #252525);
+  background-color: var(--tg-theme-bg-color, #252525);
   color: var(--tg-theme-button-color, #57ca94);
   border: 1px solid var(--tg-theme-button-color, #57ca94);
 }

@@ -58,7 +58,7 @@
 
 .food_options {
     display: grid;
-    background-color: var(--tg-theme-bg-color, #252525);
+    background-color: var(--tg-theme-section-bg-color, #252525);
     grid-template-columns: repeat(2, 1fr);
     padding: 1rem;
     gap: .75rem;
