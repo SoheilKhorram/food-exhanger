@@ -1,9 +1,53 @@
-.exchange_food_options__buttons{
-    gap: 8px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.home-page {
+    background-color: var(--tg-secondary-bg-color, #000);
+    min-height: 100vh;
+    position: relative;
 }
 
-.exchange_food_options__buttons button:nth-child(3){
+.exchange_food_options__buttons {
+    gap: .75rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+}
+
+.exchange_food_options__buttons button:nth-child(1) {
     grid-column: 2 span;
+}
+
+.man_or_woman {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: -20px;
+}
+
+
+.man_or_woman--man-border {
+    background-color: var(--tg-theme-section-bg-color, #252525);
+    position: absolute;
+    width: 33%;
+    height: 33vw;
+    top: 9vw;
+    left: 10vw;
+    border-radius: 10px;
+}
+
+.man_or_woman--woman-border {
+    background-color: var(--tg-theme-section-bg-color, #252525);
+    position: absolute;
+    width: 33%;
+    height: 33vw;
+    top: 9vw;
+    right: 7vw;
+    border-radius: 10px;
+}
+
+.man-border-color {
+    border: 1.5px solid #f7931e;
+    transition: all 150ms ease;
+}
+
+.woman-border-color {
+    border: 1.5px solid #00a99d;
+    transition: all 150ms ease;
 }

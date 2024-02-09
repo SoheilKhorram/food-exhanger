@@ -1,43 +1,68 @@
-import Lottie, { LottieRefCurrentProps } from 'lottie-react';
-import { useEffect, useRef } from 'react';
+import Lottie from 'lottie-react'
 
-import ManAnimation from '../assets/man.json';
-import WomanAnimation from '../assets/woman.json';
-import styles from './HomePage.module.css';
+import ManAnimation from '../assets/man.json'
+import WomanAnimation from '../assets/woman.json'
+import styles from './HomePage.module.css'
+import { useState } from 'react'
+
+type FoodOptions = 'درخواستی' | 'واگذاری' | 'تبادل'
+
 
 const HomePage = () => {
-  const container = useRef<LottieRefCurrentProps>(null);
+  const [isMan, setIsMan] = useState<boolean | undefined>(undefined)
+  const [foodOption, setFoodOption] = useState<FoodOptions | undefined>(undefined)
 
-  const handleClick = () => {
-    container.current?.goToAndPlay(4);
-  };
-
-  useEffect(() => {
-    container.current?.setSpeed(0.5);
-  }, []);
+  const handleFoodOptions = (option: FoodOptions) => {
+    switch (option) {
+      case 'درخواستی':
+        setFoodOption('درخواستی')
+        break
+      case 'واگذاری':
+        setFoodOption('واگذاری')
+        break
+      case 'تبادل':
+        setFoodOption('تبادل')
+        break
+      default:
+        setFoodOption(undefined)
+    }
+  }
 
   return (
-    <div>
+    <div className={styles['home-page']}>
+      <section className={styles["man_or_woman"]}>
+        <div
+          className={styles["man_or_woman--man"]}
+          onClick={() => setIsMan(true)}
+        >
+          <Lottie
+            animationData={ManAnimation}
+            autoPlay={true}
+            loop={true}
+            initialSegment={[35, 110]}
+            style={{ zIndex: 10, position: "relative" }}
+          />
+          <div className={`${styles["man_or_woman--woman-border"]} ${isMan === false ? styles["woman-border-color"] : null} `} />
+        </div>
+        <div
+          className={styles["man_or_woman--woman"]}
+          onClick={() => setIsMan(false)}
+        >
+          <Lottie
+            animationData={WomanAnimation}
+            autoPlay={true}
+            loop={true}
+            initialSegment={[35, 110]}
+          />
+          <div className={`${styles["man_or_woman--man-border"]} ${isMan === true ? styles["man-border-color"] : null} `} />
+        </div>
+      </section>
       <div className={styles['exchange_food_options__buttons']}>
-        <button onClick={handleClick}>درخواستی</button>
-        <button>واگذاری</button>
-        <button>تبادل</button>
+        <button onClick={() => handleFoodOptions('تبادل')} className={`button unselected ${foodOption === "تبادل" ? "selected" : null}`}>تبادل</button>
+        <button onClick={() => handleFoodOptions('درخواستی')} className={`button unselected ${foodOption === "درخواستی" ? "selected" : null}`}>درخواستی</button>
+        <button onClick={() => handleFoodOptions('واگذاری')} className={`button unselected ${foodOption === "واگذاری" ? "selected" : null}`}>واگذاری</button>
       </div>
-      <Lottie
-        lottieRef={container}
-        animationData={ManAnimation}
-        autoPlay={true}
-        loop={true}
-        initialSegment={[35, 110]}
-      />
-        <Lottie
-          lottieRef={container}
-          animationData={WomanAnimation}
-          autoPlay={true}
-          loop={true}
-          initialSegment={[35, 110]}
-        />
     </div>
-  );
-};
-export default HomePage;
+  )
+}
+export default HomePage
