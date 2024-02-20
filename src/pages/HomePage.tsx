@@ -8,7 +8,7 @@ import Exchange from '../components/Exchange'
 import Requested from '../components/Requested'
 import Transfer from '../components/Transfer'
 // import Modal from '../components/Modal'
-import WebApp from '@twa-dev/sdk'
+// import WebApp from '@twa-dev/sdk'
 
 type FoodOptions = 'requested' | 'transfer' | 'exchange'
 
@@ -72,8 +72,8 @@ const HomePage = () => {
           somthing
         </Modal> */}
         <div>Eruda is here</div>
-        <div>{WebApp.initData.first_name || "soheil"}</div>
-        <div>{WebApp.initData.photo_url || "URL"}</div>
+        {/* <div>{WebApp.initData.first_name || "soheil"}</div> */}
+        {/* <div>{WebApp.initData.photo_url || "URL"}</div> */}
       </div>
     </>
   )
