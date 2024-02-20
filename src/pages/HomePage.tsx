@@ -73,6 +73,7 @@ const HomePage = () => {
         {/* <Modal onClose={() => { }}>
           somthing
         </Modal> */}
+        <div>Eruda is here</div>
       </div>
     </>
   )
