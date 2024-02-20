@@ -30,8 +30,6 @@ const HomePage = () => {
     }
   }
 
-  console.log("this is initData" + WebApp.initData)
-
   return (
     <>
       <div className={styles['home-page']}>
@@ -74,6 +72,8 @@ const HomePage = () => {
           somthing
         </Modal> */}
         <div>Eruda is here</div>
+        <div>{WebApp.initData.first_name || "soheil"}</div>
+        <div>{WebApp.initData.photo_url || "URL"}</div>
       </div>
     </>
   )
