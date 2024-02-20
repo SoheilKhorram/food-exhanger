@@ -46,3 +46,7 @@ body {
   color: var(--tg-theme-button-text-color, #ffffff);
   border: 1px solid var(--tg-theme-button-color, #57ca94);
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}

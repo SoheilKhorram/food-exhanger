@@ -12,6 +12,7 @@
   "dependencies": {
     "@twa-dev/sdk": "^7.0.0",
     "@vitejs/plugin-basic-ssl": "^1.1.0",
+    "axios": "^1.6.7",
     "formik": "^2.4.5",
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.2",

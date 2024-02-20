@@ -1,0 +1,106 @@
+.food_options {
+    background-color: var(--tg-theme-section-bg-color, #252525);
+    border-radius: 10px;
+}
+
+.food_options div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    gap: .75rem;
+}
+
+.food_options div>span {
+    text-align: right;
+    font-size: .75rem;
+    grid-column: span 2;
+    color: var(--tg-theme-text-color, #fff);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: .25rem;
+    flex-direction: row-reverse;
+}
+
+.food_options p:nth-of-type(2) {
+    display: inline-block;
+    color: var(--tg-theme-destructive-text-color, #6b6b6b);
+    font-size: 10px;
+}
+
+.place_options {
+    background-color: var(--tg-theme-section-bg-color, #252525);
+    border-radius: 10px;
+}
+
+.place_options div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--tg-theme-section-bg-color, #252525);
+    border-radius: 10px;
+    padding: 1rem;
+    gap: .75rem;
+}
+
+.place_options div>span {
+    text-align: right;
+    font-size: .75rem;
+    grid-column: 2 span;
+    color: var(--tg-theme-text-color, #fff);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: .25rem;
+    flex-direction: row-reverse;
+}
+
+.place_options p:nth-of-type(2) {
+    display: inline-block;
+    color: var(--tg-theme-destructive-text-color, #6b6b6b);
+    font-size: 10px;
+}
+
+.code {
+    display: grid;
+    padding: 1rem;
+    background-color: var(--tg-theme-section-bg-color, #252525);
+    border-radius: 10px;
+    gap: .75rem;
+}
+
+.code p {
+    color: var(--tg-theme-text-color, #fff);
+    font-size: .75rem;
+    text-align: right;
+}
+
+.code p:nth-of-type(2) {
+    display: inline-block;
+    color: var(--tg-theme-destructive-text-color, #6b6b6b);
+    font-size: 10px;
+}
+
+.code span {
+    text-align: right;
+    font-size: .75rem;
+    grid-column: 2 span;
+    color: var(--tg-theme-text-color, #fff);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: .25rem;
+}
+
+
+.code input {
+    border: none;
+    grid-column: span 2;
+    background-color: var(--tg-theme-bg-color, #252525);
+    border: 1px solid var(--tg-theme-button-color, #57ca94);
+    color: var(--tg-theme-button-color, #57ca94);
+    padding: 10.2px 20px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: right;
+}
