@@ -74,6 +74,12 @@ const HomePage = () => {
         </Modal> */}
         <div>Eruda is here</div>
         <img src={WebApp.initDataUnsafe.user?.photo_url} alt="usererer" />
+        <div>{WebApp.initDataUnsafe.user?.photo_url} is the URL</div>
+        <div>{WebApp.initDataUnsafe.user?.photo_url}    </div>
+        <div>{WebApp.initDataUnsafe.user?.username}   is the username </div>
+        <div>{WebApp.initDataUnsafe.user?.username}   </div>
+        <div>{WebApp.initDataUnsafe.user?.id}   </div>
+        <div>{WebApp.initDataUnsafe.user?.id}  is ID </div>
         {/* <div>{WebApp.initData.first_name || "soheil"}</div> */}
         {/* <div>{WebApp.initData.photo_url || "URL"}</div> */}
       </div>
