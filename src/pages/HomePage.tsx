@@ -7,6 +7,7 @@ import { useState } from 'react'
 import Exchange from '../components/Exchange'
 import Requested from '../components/Requested'
 import Transfer from '../components/Transfer'
+import WebApp from '@twa-dev/sdk'
 // import Modal from '../components/Modal'
 // import WebApp from '@twa-dev/sdk'
 
@@ -72,6 +73,7 @@ const HomePage = () => {
           somthing
         </Modal> */}
         <div>Eruda is here</div>
+        <img src={WebApp.initDataUnsafe.user?.photo_url} alt="usererer" />
         {/* <div>{WebApp.initData.first_name || "soheil"}</div> */}
         {/* <div>{WebApp.initData.photo_url || "URL"}</div> */}
       </div>
