@@ -7,7 +7,6 @@ import { useState } from 'react'
 import Exchange from '../components/Exchange'
 import Requested from '../components/Requested'
 import Transfer from '../components/Transfer'
-import WebApp from '@twa-dev/sdk'
 // import Modal from '../components/Modal'
 // import WebApp from '@twa-dev/sdk'
 
@@ -30,6 +29,12 @@ const HomePage = () => {
         break
     }
   }
+
+  const urlParams = new URLSearchParams(window.location.search)
+  const userId = urlParams.get('userId')
+  const chatId = urlParams.get('chatId')
+
+  console.log(userId, chatId)
 
   return (
     <>
@@ -72,13 +77,6 @@ const HomePage = () => {
         {/* <Modal onClose={() => { }}>
           somthing
         </Modal> */}
-        <div>Eruda is here</div>
-        <img src={WebApp.initDataUnsafe.user?.photo_url} alt="usererer" />
-        <div>{WebApp.initDataUnsafe.user?.photo_url}</div>
-        <div>{WebApp.initDataUnsafe.receiver?.photo_url}</div>
-        <div>{WebApp.initDataUnsafe.chat?.photo_url}</div>
-        {/* <div>{WebApp.initData.first_name || "soheil"}</div> */}
-        {/* <div>{WebApp.initData.photo_url || "URL"}</div> */}
       </div>
     </>
   )
