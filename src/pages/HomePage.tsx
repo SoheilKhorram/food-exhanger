@@ -1,12 +1,13 @@
 import Lottie from 'lottie-react'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ManAnimation from '../assets/man.json'
 import WomanAnimation from '../assets/woman.json'
 import Exchange from '../components/Exchange'
 import Requested from '../components/Requested'
 import Transfer from '../components/Transfer'
 import styles from './HomePage.module.css'
+import axios from 'axios'
 // import Modal from '../components/Modal'
 // import WebApp from '@twa-dev/sdk'
 
@@ -32,9 +33,18 @@ const HomePage = () => {
 
   const urlParams = new URLSearchParams(window.location.search)
   const userId = urlParams.get('userId')
-  const chatId = urlParams.get('chatId')
 
-  console.log(userId, chatId)
+  useEffect(() => {
+    axios.post('http://localhost:4000/api/userInfo', {
+      userId
+    }, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((res) => {
+      console.log(res)
+    })
+  })
 
   return (
     <>
