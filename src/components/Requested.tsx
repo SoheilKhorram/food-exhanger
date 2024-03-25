@@ -17,7 +17,7 @@ const Requested = ({ isMan }: RequestedProps) => {
     const [requestedFoodPlace, setRequestedFoodPlace] = useState<FoodPlaces | undefined>(undefined)
     const [hasRequestedFoodTypeError, setHasRequestedFoodTypeError] = useState<boolean>(false)
     const [hasRequestedFoodPlaceError, setHasRequestedFoodPlaceError] = useState<boolean>(false)
-    const [data, setData] = useState(null)
+    // const [data, setData] = useState<>({})
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     const checkErrors = () => {
@@ -65,14 +65,14 @@ const Requested = ({ isMan }: RequestedProps) => {
 
         if (!(hasRequestedFoodPlaceError || hasRequestedFoodTypeError)) {
             setIsModalOpen(true)
-            const response = await axios.get('http://localhost:4000/api/transfer', {
+            /* const response = */ await axios.get('http://localhost:4000/api/transfer', {
                 params: {
                     isMan,
                     requestedFoodType,
                     requestedFoodPlace
                 }
             })
-            setData(response.data)
+            // setData(response.data)
         }
     }
 
@@ -108,6 +108,7 @@ const Requested = ({ isMan }: RequestedProps) => {
             {isModalOpen && <Modal width="50%" onClose={() => setIsModalOpen(false)}>
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 5, fontSize: "12px" }}>
                     <p style={{ fontSize: "24px" }}>123456</p>
+                    {/* <p style={{ fontSize: "24px" }}>{data?.code}</p> */}
                     <a href="tg://user?id=103190680">somehing</a>
                 </div>
             </Modal>}
