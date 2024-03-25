@@ -4,7 +4,7 @@ import { MainButton } from "@twa-dev/sdk/react"
 import styles from "./Requested.module.css"
 import axios from "axios"
 
-type FoodTypes = "قیمه" | "مرغ"
+type FoodTypes = "gheymeh" | "morgh"
 type FoodPlaces = "dormitory" | "central"
 
 interface RequestedProps {
@@ -46,11 +46,11 @@ const Requested = ({ isMan }: RequestedProps) => {
 
     const handleRequestedFoodType = (type: FoodTypes) => {
         switch (type) {
-            case 'قیمه':
-                setRequestedFoodType('قیمه')
+            case 'gheymeh':
+                setRequestedFoodType('gheymeh')
                 break
-            case 'مرغ':
-                setRequestedFoodType('مرغ')
+            case 'morgh':
+                setRequestedFoodType('morgh')
                 break
             default:
                 setRequestedFoodType(undefined)
@@ -80,8 +80,8 @@ const Requested = ({ isMan }: RequestedProps) => {
                         <p>کدوم غذارو میخوای ؟</p>
                         {hasRequestedFoodTypeError && <p>! یادت رفت انتخاب کنیا</p>}
                     </span>
-                    <button onClick={() => handleRequestedFoodType('قیمه')} className={`button unselected ${requestedFoodType === "قیمه" ? "selected" : null}`}>قیمه</button>
-                    <button onClick={() => handleRequestedFoodType('مرغ')} className={`button unselected ${requestedFoodType === "مرغ" ? "selected" : null}`}>مرغ</button>
+                    <button onClick={() => handleRequestedFoodType('gheymeh')} className={`button unselected ${requestedFoodType === "gheymeh" ? "selected" : null}`}>قیمه</button>
+                    <button onClick={() => handleRequestedFoodType('morgh')} className={`button unselected ${requestedFoodType === "morgh" ? "selected" : null}`}>مرغ</button>
                 </div>
             </div >
             <div className={styles['place_options']}>
