@@ -7,9 +7,6 @@ import Exchange from '../components/Exchange'
 import Requested from '../components/Requested'
 import Transfer from '../components/Transfer'
 import styles from './HomePage.module.css'
-import axios from 'axios'
-// import Modal from '../components/Modal'
-// import WebApp from '@twa-dev/sdk'
 
 type FoodOptions = 'requested' | 'transfer' | 'exchange'
 
@@ -31,20 +28,17 @@ const HomePage = () => {
     }
   }
 
-  const urlParams = new URLSearchParams(window.location.search)
-  const userId = urlParams.get('userId')
-
   useEffect(() => {
-    axios.post('http://localhost:4000/api/userInfo', {
-      userId
-    }, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((res) => {
-      console.log(res)
-    })
-  })
+    const urlParams = new URLSearchParams(window.location.search)
+    const userId = urlParams.get('userId')
+    const name = urlParams.get('name')
+    const username = urlParams.get('username')
+
+    localStorage.setItem('userId', userId as string)
+    localStorage.setItem('name', name as string)
+    localStorage.setItem('username', username as string)
+  }, [])
+
 
   return (
     <>
