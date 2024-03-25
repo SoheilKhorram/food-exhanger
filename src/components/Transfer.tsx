@@ -81,9 +81,9 @@ const Transfer = () => {
             axios.post('http://localhost:4000/api/transfer', {
                 requestedFoodType: yourFoodType,
                 requestedFoodPlace: yourFoodPlace,
-                name,
-                username,
-                userId: +userId!,
+                /* name: "Sina",
+                username: "SP",
+                userId: 103190680, */
                 code: foodCode
             }, {
                 headers: {
