@@ -71,19 +71,15 @@ const Transfer = () => {
     const handleMainButtonClick = () => {
         checkErrors()
 
-        const name = localStorage.getItem('name')
+        /* const name = localStorage.getItem('name')
         const username = localStorage.getItem('username')
-        const userId = localStorage.getItem('userId')
+        const userId = localStorage.getItem('userId') */
 
-        console.log(name, username, userId, yourFoodType, yourFoodPlace, foodCode)
 
         if (!(hasYourFoodPlaceError || hasYourFoodTypeError || hasFoodCodeError)) {
             axios.post('http://localhost:4000/api/transfer', {
                 requestedFoodType: yourFoodType,
                 requestedFoodPlace: yourFoodPlace,
-                /* name: "Sina",
-                username: "SP",
-                userId: 103190680, */
                 code: foodCode
             }, {
                 headers: {
@@ -99,6 +95,7 @@ const Transfer = () => {
 
     return (
         <>
+            <h1>TESTTTTTTTTT</h1>
             <div className={styles['food_options']}>
                 <div>
                     <span>
