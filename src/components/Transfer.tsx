@@ -75,6 +75,8 @@ const Transfer = () => {
         const username = localStorage.getItem('username')
         const userId = localStorage.getItem('userId')
 
+        console.log(name, username, userId, yourFoodType, yourFoodPlace, foodCode)
+
         if (!(hasYourFoodPlaceError || hasYourFoodTypeError || hasFoodCodeError)) {
             axios.post('http://localhost:4000/api/transfer', {
                 requestedFoodType: yourFoodType,
@@ -87,6 +89,10 @@ const Transfer = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 }
+            }).then((res) => {
+                console.log(res)
+            }).catch((err) => {
+                console.log(err)
             })
         }
     }
