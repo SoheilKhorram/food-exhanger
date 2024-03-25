@@ -7,7 +7,11 @@ import { MainButton } from "@twa-dev/sdk/react"
 type FoodTypes = "قیمه" | "مرغ"
 type FoodPlaces = "dormitory" | "central"
 
-const Exchange = () => {
+interface ExchangeProps {
+    isMan: boolean | undefined
+}
+
+const Exchange = ({ isMan }: ExchangeProps) => {
     const [yourFoodType, setYourFoodType] = useState<FoodTypes | undefined>(undefined)
     const [wantedFoodType, setWantedFoodType] = useState<FoodTypes | undefined>(undefined)
     const [yourFoodPlace, setYourFoodPlace] = useState<FoodPlaces | undefined>(undefined)
@@ -111,6 +115,8 @@ const Exchange = () => {
     const handleMainButtonClick = () => {
         checkErrors()
     }
+
+    console.log(isMan)
 
     return (
         <>

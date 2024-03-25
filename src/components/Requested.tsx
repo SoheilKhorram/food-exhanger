@@ -7,7 +7,11 @@ import axios from "axios"
 type FoodTypes = "قیمه" | "مرغ"
 type FoodPlaces = "dormitory" | "central"
 
-const Requested = () => {
+interface RequestedProps {
+    isMan: boolean | undefined
+}
+
+const Requested = ({ isMan }: RequestedProps) => {
     const [requestedFoodType, setRequestedFoodType] = useState<FoodTypes | undefined>(undefined)
     const [requestedFoodPlace, setRequestedFoodPlace] = useState<FoodPlaces | undefined>(undefined)
     const [hasRequestedFoodTypeError, setHasRequestedFoodTypeError] = useState<boolean>(false)
@@ -59,8 +63,9 @@ const Requested = () => {
         if (!(hasRequestedFoodPlaceError || hasRequestedFoodTypeError)) {
             const response = await axios.get('http://localhost:4000/api/transfer', {
                 params: {
-                    requestedFoodType: "morgh",
-                    requestedFoodPlace: "dorm"
+                    isMan,
+                    requestedFoodType,
+                    requestedFoodPlace
                 }
             })
             console.log(response)

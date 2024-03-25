@@ -99,9 +99,9 @@ const HomePage = () => {
             واگذاری
           </button>
         </div>
-        {foodOption === 'exchange' && <Exchange />}
-        {foodOption === 'requested' && <Requested />}
-        {foodOption === 'transfer' && <Transfer />}
+        {foodOption === 'exchange' && <Exchange isMan={isMan} />}
+        {foodOption === 'requested' && <Requested isMan={isMan} />}
+        {foodOption === 'transfer' && <Transfer isMan={isMan} />}
         {/* <Modal onClose={() => { }}>
           somthing
         </Modal> */}

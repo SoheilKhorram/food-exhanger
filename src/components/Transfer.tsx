@@ -6,7 +6,11 @@ import axios from "axios"
 type FoodTypes = "gheymeh" | "morgh"
 type FoodPlaces = "dormitory" | "central"
 
-const Transfer = () => {
+interface TransferProps {
+    isMan: boolean | undefined
+}
+
+const Transfer = ({ isMan }: TransferProps) => {
     const [yourFoodType, setYourFoodType] = useState<FoodTypes | undefined>(undefined)
     const [yourFoodPlace, setYourFoodPlace] = useState<FoodPlaces | undefined>(undefined)
     const [hasYourFoodTypeError, setHasYourFoodTypeError] = useState<boolean>(false)
@@ -79,6 +83,7 @@ const Transfer = () => {
             axios.post('http://localhost:4000/api/transfer', {
                 requestedFoodType: yourFoodType,
                 requestedFoodPlace: yourFoodPlace,
+                isMan,
                 name,
                 username,
                 userId: +userId!,
