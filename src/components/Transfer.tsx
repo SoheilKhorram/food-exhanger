@@ -3,7 +3,7 @@ import styles from "./Transfer.module.css"
 import { useState } from "react"
 import axios from "axios"
 
-type FoodTypes = "قیمه" | "مرغ"
+type FoodTypes = "gheymeh" | "morgh"
 type FoodPlaces = "dormitory" | "central"
 
 const Transfer = () => {
@@ -17,11 +17,11 @@ const Transfer = () => {
 
     const handleYourFoodType = (type: FoodTypes) => {
         switch (type) {
-            case 'قیمه':
-                setYourFoodType('قیمه')
+            case 'gheymeh':
+                setYourFoodType('gheymeh')
                 break
-            case 'مرغ':
-                setYourFoodType('مرغ')
+            case 'morgh':
+                setYourFoodType('morgh')
                 break
             default:
                 setYourFoodType(undefined)
@@ -71,21 +71,29 @@ const Transfer = () => {
     const handleMainButtonClick = () => {
         checkErrors()
 
-        console.log('name is: ' + localStorage.getItem('name'))
-        console.log('username is: ' + localStorage.getItem('username'))
-        console.log('userId is: ' + localStorage.getItem('userId'))
+        const name = localStorage.getItem('name')
+        const username = localStorage.getItem('username')
+        const userId = localStorage.getItem('userId')
 
         if (!(hasYourFoodPlaceError || hasYourFoodTypeError || hasFoodCodeError)) {
             axios.post('http://localhost:4000/api/transfer', {
-                requestedFoodType: "morgh",
-                requestedFoodPlace: "dorm",
-                code: 123456
+                requestedFoodType: yourFoodType,
+                requestedFoodPlace: yourFoodPlace,
+                name,
+                username,
+                userId: +userId!,
+                code: foodCode
             }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
         }
+
+        //reset the form
+        setYourFoodType(undefined)
+        setYourFoodPlace(undefined)
+        setFoodCode(undefined)
     }
 
     return (
@@ -96,8 +104,8 @@ const Transfer = () => {
                         <p>غذات چیه ؟</p>
                         {hasYourFoodTypeError && <p>! یادت رفت انتخاب کنیا</p>}
                     </span>
-                    <button onClick={() => handleYourFoodType('قیمه')} className={`button unselected ${yourFoodType === "قیمه" ? "selected" : null}`}>قیمه</button>
-                    <button onClick={() => handleYourFoodType('مرغ')} className={`button unselected ${yourFoodType === "مرغ" ? "selected" : null}`}>مرغ</button>
+                    <button onClick={() => handleYourFoodType('gheymeh')} className={`button unselected ${yourFoodType === "gheymeh" ? "selected" : null}`}>قیمه</button>
+                    <button onClick={() => handleYourFoodType('morgh')} className={`button unselected ${yourFoodType === "morgh" ? "selected" : null}`}>مرغ</button>
                 </div>
             </div>
             <div className={styles['place_options']}>
