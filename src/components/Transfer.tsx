@@ -89,11 +89,6 @@ const Transfer = () => {
                 }
             })
         }
-
-        //reset the form
-        setYourFoodType(undefined)
-        setYourFoodPlace(undefined)
-        setFoodCode(undefined)
     }
 
     return (
