@@ -3,6 +3,7 @@ import { MainButton } from "@twa-dev/sdk/react"
 
 import styles from "./Requested.module.css"
 import axios from "axios"
+import Modal from "./Modal"
 
 type FoodTypes = "gheymeh" | "morgh"
 type FoodPlaces = "dormitory" | "central"
@@ -16,6 +17,8 @@ const Requested = ({ isMan }: RequestedProps) => {
     const [requestedFoodPlace, setRequestedFoodPlace] = useState<FoodPlaces | undefined>(undefined)
     const [hasRequestedFoodTypeError, setHasRequestedFoodTypeError] = useState<boolean>(false)
     const [hasRequestedFoodPlaceError, setHasRequestedFoodPlaceError] = useState<boolean>(false)
+    const [data, setData] = useState(null)
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const checkErrors = () => {
         if (requestedFoodType === undefined) {
@@ -61,6 +64,7 @@ const Requested = ({ isMan }: RequestedProps) => {
         checkErrors()
 
         if (!(hasRequestedFoodPlaceError || hasRequestedFoodTypeError)) {
+            setIsModalOpen(true)
             const response = await axios.get('http://localhost:4000/api/transfer', {
                 params: {
                     isMan,
@@ -68,7 +72,7 @@ const Requested = ({ isMan }: RequestedProps) => {
                     requestedFoodPlace
                 }
             })
-            console.log(response)
+            setData(response.data)
         }
     }
 
@@ -101,6 +105,12 @@ const Requested = ({ isMan }: RequestedProps) => {
                 onClick={handleMainButtonClick}
                 text='بزن بریم'
             />
+            {isModalOpen && <Modal width="50%" onClose={() => setIsModalOpen(false)}>
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 5, fontSize: "12px" }}>
+                    <p style={{ fontSize: "24px" }}>123456</p>
+                    <a href="tg://user?id=103190680">somehing</a>
+                </div>
+            </Modal>}
         </>
     )
 }

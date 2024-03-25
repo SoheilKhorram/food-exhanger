@@ -36,7 +36,7 @@
     margin: auto 1rem;
     background-color: var(--tg-theme-secondary-bg-color, #000);
     color: wheat;
-    border-radius: 6px;
+    border-radius: 10px;
     padding: 1.5rem;
     z-index: 1000;
 }
